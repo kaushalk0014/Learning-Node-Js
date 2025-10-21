@@ -1,0 +1,18 @@
+https://www.youtube.com/watch?v=gxHXPmePnvo
+
+Prettier:
+
+Prettier is essential in VS Code to automatically format your code, ensuring consistency, readability, and fewer style-related issues across teams.
+
+
+Setting for Line Wrap;
+    Step 1:
+        Go in side Setting 
+            then seatch line wrap
+
+Tab Size Setting 
+    Step 1;
+        Go in side Setting
+            then seatch tab size
+
+
