@@ -33,12 +33,26 @@ const server = http.createServer((req, res) => {
     req.on("end", () =>{
       const parsedData = Buffer.concat(body).toString();
       console.log("parsedData data received:", querystring.parse(parsedData));
-      res.write("<html><body>");
-      res.write("<h1>Customer Data Submitted</h1>");
-      const data = querystring.parse(parsedData);
-      res.write(`<p>User Name: ${data.username}</p>`);
-      res.write(`<p>Gender: ${data.gender}</p>`);
-      res.write("</body></html>");
+      // res.write("<html><body>");
+      // res.write("<h1>Customer Data Submitted</h1>");
+      // const data = querystring.parse(parsedData);
+      // res.write(`<p>User Name: ${data.username}</p>`);
+      // res.write(`<p>Gender: ${data.gender}</p>`);
+      // res.write("</body></html>");
+      // return res.end();
+
+
+      const objectData = {};
+      const params = new URLSearchParams(parsedData);
+      for(const [key, value] of params){
+        //console.log(`${key}: ${value}`);
+        objectData[key] = value;
+        console.log(objectData);
+      }
+      console.log("========================================================");
+      const bodyObject = Object.fromEntries(params.entries());
+      console.log("Body Object:", bodyObject);
+
       return res.end();
     });
 
