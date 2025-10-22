@@ -1,5 +1,7 @@
 https://www.youtube.com/watch?v=gxHXPmePnvo
 
+https://www.geeksforgeeks.org/node-js/node-js-roadmap/
+
 Prettier:
 
 Prettier is essential in VS Code to automatically format your code, ensuring consistency, readability, and fewer style-related issues across teams.
@@ -15,4 +17,63 @@ Tab Size Setting
         Go in side Setting
             then seatch tab size
 
+============================================================================================================
 
+Node.js Roadmap: Beginner to Advanced
+🟢 Beginner Level: Foundations
+- JavaScript Fundamentals: ES6+, async/await, callbacks, promises
+- Node.js Basics:
+- What is Node.js and its event-driven architecture
+- Installing Node.js and using npm/npx
+- Core modules: fs, http, path, os, events
+- Basic Server Setup:
+- Creating HTTP servers
+- Handling routes and requests
+- Package Management:
+- Installing and using third-party packages
+- Understanding package.json and semantic versioning
+🟡 Intermediate Level: Building Real Apps
+- Express.js Framework:
+- Routing, middleware, error handling
+- RESTful API design
+- Templating Engines: EJS, Pug (optional for server-rendered apps)
+- Environment Variables: Using dotenv
+- File Uploads: multer integration
+- Authentication:
+- JWT, OAuth2, sessions
+- Passport.js or custom auth flows
+- Database Integration:
+- MongoDB with Mongoose
+- PostgreSQL/MySQL with Sequelize or Knex.js
+- Validation & Security:
+- Input validation with joi or express-validator
+- Helmet, rate limiting, CORS
+🔴 Advanced Level: Production-Ready Systems
+- Architecture Patterns:
+- MVC, layered architecture, service-repository pattern
+- Modularization and clean code practices
+- Testing:
+- Unit and integration testing with Jest, Mocha, Supertest
+- Logging & Monitoring:
+- Winston, Morgan, Prometheus, Grafana
+- Real-Time Communication:
+- WebSockets with socket.io
+- Job Scheduling & Queues:
+- node-cron, bull, Redis-backed queues
+- Microservices & Message Brokers:
+- Kafka, RabbitMQ, gRPC
+- Containerization & Deployment:
+- Dockerizing Node apps
+- CI/CD pipelines
+- Deploying to cloud (AWS, Heroku, Vercel)
+🧠 Bonus: Performance & Internals
+- Event loop, libuv, non-blocking I/O
+- Memory management and garbage collection
+- Profiling and debugging with Chrome DevTools
+
+📚 Recommended Resources
+- GeeksforGeeks Node.js Roadmap
+- Roadmap.sh Node.js Developer Guide
+- NxtWave Node.js Roadmap
+
+Would you like a personalized roadmap tailored to your current skill level and goals (e.g. backend APIs, real-time apps, microservices)? I can break it down into weekly milestones or project-based learning.
