@@ -79,3 +79,30 @@ Node.js Roadmap: Beginner to Advanced
 - NxtWave Node.js Roadmap
 
 Would you like a personalized roadmap tailored to your current skill level and goals (e.g. backend APIs, real-time apps, microservices)? I can break it down into weekly milestones or project-based learning.
+
+
+
+-------------------------------------------------------------------------------------------------
+
+If we want to ignore node_modules file these are below commond
+
+
+# Ignore all node_modules folders
+**/node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment files
+.env
+
+# Ignore build output
+dist/
+build/
+
+2. git check-ignore -v Npm-And-Tool/node_modules
+
+3. git rm -r --cached Error-And-Debugg/node_modules
+4. git add .gitignore
+5. git commit -m "Add .gitignore to exclude unnecessary files"
+
