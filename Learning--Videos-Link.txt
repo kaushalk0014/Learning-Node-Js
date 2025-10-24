@@ -103,6 +103,7 @@ build/
 2. git check-ignore -v Npm-And-Tool/node_modules
 
 3. git rm -r --cached Error-And-Debugg/node_modules
+   git rm -r --cached Npm-And-Tool/node_modules
 4. git add .gitignore
 5. git commit -m "Add .gitignore to exclude unnecessary files"
 
