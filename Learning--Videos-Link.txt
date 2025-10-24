@@ -17,6 +17,8 @@ Tab Size Setting
         Go in side Setting
             then seatch tab size
 
+Material Icon Theme (install "icon" for file icon)
+
 ============================================================================================================
 
 Node.js Roadmap: Beginner to Advanced

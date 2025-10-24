@@ -1,0 +1,33 @@
+1. npm init: command is use for create node project
+
+------------------------------------------------------------------
+PS D:\Practic-2025\Learning-Node-Js\Npm-And-Tool> npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (npm-and-tool) package.json
+version: (1.0.0)                                                                                                                                                     
+description: It is use for basic node learning                                                                                                                       
+entry point: (apps.js)                                                                                                                                               
+test command:                                                                                                                                                        
+git repository:                                                                                                                                                      
+keywords:                                                                                                                                                            
+author: kaushal kumar
+license: (ISC)                                                                                                                                                       
+About to write to D:\Practic-2025\Learning-Node-Js\Npm-And-Tool\package.json:
+-------------------------------------------------------------------------------
+2.  "start": "node apps.js"
+    After adding "start" in package.json file we can start node server using "npm start"
+
+3. npm install <package-name>
+4. nodemon: Nodemon is use for auto load/re-run server on any changes(similar to devtool) 
+    example: npm install nodemon --save-dev
+
+    "start": "nodemon apps.js"  : we need to change package.json file

@@ -1,0 +1,1 @@
+Learning Node js (reading data by sync)
