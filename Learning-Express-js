@@ -1,1 +1,3 @@
 install Express js :  npm install express --save
+to read request body install body-parser : npm install body-parser --save
+to auto restart server install nodemon : npm install nodemon --save-dev
