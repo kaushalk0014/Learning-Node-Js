@@ -1,0 +1,35 @@
+https://tailwindcss.com/
+
+how to setup tailwindcss we can use tailwin document:  https://tailwindcss.com/docs/installation/tailwind-cli
+
+How to use tailwinds css in project: 
+      Step 1: npm install -d tailwindcss postcss autoprefixer
+      Step 2: Create tailwind.config.js (if needed)
+      Step 3:  add below code in tailwind.config.js
+          
+           /** @type {import('tailwindcss').Config} */
+            module.exports = {
+                  content: ["./views/*.html"], // adjust paths as needed
+                  theme: {
+                  extend: {},
+                  },
+                  plugins: [],
+            }
+      
+      Step 4: create input.css file and add below code in side input.css
+
+            @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+      
+      Step 5: Then build it using:
+            npx tailwindcss -i ./views/input.css -o ./public/output.css --watch
+
+Docs: https://tailwindcss.com/docs/installation/play-cdn
+
+
+Notes: To run tailwindcss we need to run two terminal one for node and one for tailwind
+
+We can fix this issue in setting package.json file
+      "tailwind": "npx tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+      "start": "nodemon app.js & npm run tailwind"
