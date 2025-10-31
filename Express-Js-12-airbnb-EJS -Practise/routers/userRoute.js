@@ -12,6 +12,7 @@ const {registerHome} = require("./hostRoute");
 const userRouter = express.Router();
 
 userRouter.get("/", (req, res, next) => {
+  console.log(registerHome);
   //res.sendFile(path.join(pathUtils, "views",  "home.ejs"));
   //Home here html file name
   res.render("home", {registeredHomes: registerHome, pageTitle:'Home airbnb'});
