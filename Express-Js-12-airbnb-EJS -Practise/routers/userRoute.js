@@ -15,7 +15,7 @@ userRouter.get("/", (req, res, next) => {
   console.log(registerHome);
   //res.sendFile(path.join(pathUtils, "views",  "home.ejs"));
   //Home here html file name
-  res.render("home", {registeredHomes: registerHome, pageTitle:'Home airbnb'});
+  res.render("home", {registeredHomes: registerHome, pageTitle:'Home airbnb', currentPage:'Home'});
 });
 
 module.exports = userRouter;
