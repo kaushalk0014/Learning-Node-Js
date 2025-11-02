@@ -16,4 +16,4 @@ hostRouter.get("/host/add-home", homeController.getAddHome);
 hostRouter.post("/host/add-home",homeController.saveHome);
 
 exports.hostRouter = hostRouter;
-exports.registerHome = registerHome;
+

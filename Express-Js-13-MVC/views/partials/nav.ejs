@@ -10,11 +10,19 @@
       </li>
       <li>
         <a
+          href="/store/booking"
+          class="<%= currentPage === 'Booking' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
+          >Booking</a
+        >
+      </li>
+      <li>
+        <a
           href="/host/add-home"
           class="<%= currentPage === 'AddHome' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
           >Add Home</a
         >
       </li>
+      
     </ul>
   </nav>
 </header>
