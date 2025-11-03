@@ -13,9 +13,13 @@ const storeRouter = express.Router();
 
 const storeController = require("../controller/storeController");
 
-storeRouter.get("/store/booking", storeController.getBooking)
+storeRouter.get("/", storeController.indexPage);
 
-storeRouter.get("/", storeController.loadHomePage);
+storeRouter.get("/store/booking", storeController.getBooking);
+
+storeRouter.get("/store/getfavourity", storeController.getFavourityList);
+
+storeRouter.get("/store/home-list", storeController.getHomeList);
 
 module.exports = storeRouter;
 
