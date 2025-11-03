@@ -39,11 +39,8 @@ module.exports = class Home {
   }
 
   static findById(homeId, callback) {
-     console.log("hohomeIdmes :   ", homeId);
     this.fetchAll((homes) => {
-      const filterHome = homes?.filter(home => home.id === homeId);
-      //console.log("homes :   ", homes);
-      console.log("filterHome :   ", filterHome);
+      const filterHome = homes?.filter((home) => String(home.id) === homeId);
       callback(filterHome);
     });
   }

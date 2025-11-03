@@ -41,13 +41,8 @@ exports.getFavourityList = (req, res, next) => {
 };
 
 exports.getHomeDetails = (req, res, next) => {
-  //console.log(req);
   const homeId = req?.params?.homeId;
-  
-  Home.findById(homeId, homeDetails=> {
-
-    console.log("----------------", homeDetails)
-
+  Home.findById(homeId, (homeDetails) => {
     res.render("store/home-details", {
       registeredHomes: homeDetails,
       pageTitle: "Home Details",
