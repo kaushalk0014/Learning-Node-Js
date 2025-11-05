@@ -7,7 +7,7 @@
         <h2 class="text-3xl text-red-500 font-bold text-center mb-6">
           Here are our registered Favourite List</h2>
           <div class="flex gap-6 justify-center items-start flex-nowrap overflow-x-auto py-4">
-            <% registeredHomes.slice(0,5).forEach(function(home) { %>
+            <% registeredHomes?.forEach(function(home) { %>
               <div class="bg-white rounded-lg shadow-md overflow-hidden mt-6" style="flex: 0% 0 20%; min-width:220px; margin: 10px;">
                 <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-48 object-cover">
                 <div class="p-8">

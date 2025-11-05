@@ -1,5 +1,7 @@
 const Home = require("../models/home");
 
+const Favourite = require("../models/favourity");
+
 exports.indexPage = (req, res, next) => {
   Home.fetchAll((registersHomeList) => {
     res.render("store/index", {
@@ -30,16 +32,6 @@ exports.getBooking = (req, res, next) => {
   });
 };
 
-exports.getFavourityList = (req, res, next) => {
-  Home.fetchAll((registersHomeList) => {
-    res.render("store/favourite-list", {
-      registeredHomes: registersHomeList,
-      pageTitle: "My Facourity",
-      currentPage: "My-Facourityes",
-    });
-  });
-};
-
 exports.getHomeDetails = (req, res, next) => {
   const homeId = req?.params?.homeId;
   Home.findById(homeId, (homeDetails) => {
@@ -57,6 +49,27 @@ exports.getHomeDetails = (req, res, next) => {
 
 exports.saveToFavouritys = (req, res, next) => {
   const { id } = req.body;
-  console.log("-----", id)
+  const favourity = new Favourite(id);
+  favourity.addToFavourity(favourity, (resData) => {
+    console.log(resData);
+  });
   res.redirect("/store/home-list");
+};
+
+exports.getFavourityList = (req, res, next) => {
+  Favourite.getFavourityList((favourityList) => {
+    Home.fetchAll((registersHomeList) => {
+      const favourityIds = favourityList.map((item) => String(item.id));
+
+      const matchedHomes = registersHomeList.filter((home) =>
+        favourityIds.includes(String(home.id))
+      );
+
+      res.render("store/favourite-list", {
+        registeredHomes: matchedHomes,
+        pageTitle: "My Facourity",
+        currentPage: "My-Facourityes",
+      });
+    });
+  });
 };
