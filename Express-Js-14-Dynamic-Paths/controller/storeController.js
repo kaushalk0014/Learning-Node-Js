@@ -73,3 +73,35 @@ exports.getFavourityList = (req, res, next) => {
     });
   });
 };
+
+exports.doUnFavouritys = (req, res, next) => {
+
+  const homeId = req.params?.homeId;
+
+  Favourite.getFavourityList((favourityList) => {
+    Home.fetchAll((registersHomeList) => {
+
+      //removing matching by home id
+      const updatedFavourityId = favourityList.filter(
+        (item) => String(item.id) !== String(homeId)
+      );
+
+      Favourite.removedById(updatedFavourityId, (success) => {
+        if (success) {
+          const favourityIds = updatedFavourityId?.map((item) =>
+            String(item.id)
+          );
+
+          const matchedHomes = registersHomeList.filter((home) =>
+            favourityIds.includes(String(home.id))
+          );
+          res.render("store/favourite-list", {
+            registeredHomes: matchedHomes,
+            pageTitle: "My Facourity",
+            currentPage: "My-Facourityes",
+          });
+        }
+      });
+    });
+  });
+};

@@ -39,4 +39,15 @@ module.exports = class Favourite {
       }
     });
   }
+
+  static removedById(updatedFavourityList, callback){
+    fs.writeFile(favourityData, JSON.stringify(updatedFavourityList, null, 2), writeErr => {
+      if (writeErr) {
+        callback(false); // file write error
+      } else {
+        callback(true); // success
+      }
+    });
+
+  }
 };

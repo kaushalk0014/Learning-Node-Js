@@ -25,6 +25,8 @@ storeRouter.get("/store/getfavourity", storeController.getFavourityList);
 
 storeRouter.post("/store/favourites", storeController.saveToFavouritys);
 
+storeRouter.get("/store/unfavourites/:homeId", storeController.doUnFavouritys);
+
 module.exports = storeRouter;
 
 
