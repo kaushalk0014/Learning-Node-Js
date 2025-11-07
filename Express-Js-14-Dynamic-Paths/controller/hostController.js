@@ -28,3 +28,25 @@ exports.getHostHomeList = (req, res, next) => {
       res.render("host/host-home-list", {registeredHomes: registersHomeList, pageTitle:'Host Home List', currentPage:'host-home-list'});
    });
 }
+
+
+exports.getEditHome = (req, res, next)=>{
+
+  const homeId = req.params.homeId;
+  const editing = req.query.editing;
+
+  console.log(editing)
+
+  console.log(homeId)
+
+  res.render("host/edit-home", {pageTitle: "Edit home", currentPage: "host-home-list"})
+}
+
+exports.updateHome = (req, res, next) =>{
+  const data = req.body;
+  console.log("data      "+data )
+ Home.fetchAll(registersHomeList=>{
+      res.render("host/host-home-list", {registeredHomes: registersHomeList, pageTitle:'Host Home List', currentPage:'host-home-list'});
+   });
+
+}
