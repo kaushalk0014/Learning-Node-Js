@@ -1,0 +1,2 @@
+To use database in node js(expree):
+  we need/use to install/commond : npm install mysql2 
