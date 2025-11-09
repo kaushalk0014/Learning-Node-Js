@@ -1,9 +1,5 @@
-//core module
-const fs = require("fs");
-const path = require("path");
-
-//local module
-const rootPath = require("../utils/pathUtils");
+ 
+const db = require("../utils/databaseUtils");
 
 module.exports = class Home {
   constructor(houseName, housePrice, location, rating, photoUrl) {
@@ -31,16 +27,8 @@ module.exports = class Home {
     });
   }
 
-  static fetchAll(callback) {
-    const homeDataPath = path.join(rootPath, "data", "homes.json");
-    fs.readFile(homeDataPath, (err, data) => {
-      //  console.log("Read File ", err, data);
-      if (!err) {
-        callback(JSON.parse(data));
-      } else {
-        callback(registerHome);
-      }
-    });
+  static fetchAll() {
+    return db.execute("select * from home_details");
   }
 
   static findById(homeId, callback) {
