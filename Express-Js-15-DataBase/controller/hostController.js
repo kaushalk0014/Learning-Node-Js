@@ -33,27 +33,28 @@ exports.saveHome = (req, res, next) => {
 };
 
 exports.getHostHomeList = (req, res, next) => {
-  Home.fetchAll((registersHomeList) => {
+  Home.fetchAll().then(([registersHomeList]) => {
     res.render("host/host-home-list", {
       registeredHomes: registersHomeList,
       pageTitle: "Host Home List",
       currentPage: "host-home-list",
     });
+  }).catch(err=>{
+    console.log("Error occure while fatching data from data base");
   });
 };
 
 exports.getEditHome = (req, res, next) => {
   const homeId = req.params.homeId;
   const editing = req.query.editing === "true";
-
-  Home.findById().then(([home])=>{
+  Home.findById(homeId).then(([home])=>{
      try {
-      //const home = homes[0];
+  
       res.render("host/edit-home", {
         pageTitle: "Edit home",
         currentPage: "host-home-list",
         isEditing: editing,
-        registeredHome: home,
+        registeredHome: home[0],
       });
     } catch (err) {
       console.log("Home not found using home id: " + homeId);

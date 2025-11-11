@@ -3,50 +3,57 @@ const Home = require("../models/home");
 const Favourite = require("../models/favourity");
 
 exports.indexPage = (req, res, next) => {
-  Home.fetchAll().then(([registersHomeList]) => {
-    res.render("store/index", {
-      registeredHomes: registersHomeList,
-      pageTitle: "Airbnb",
-      currentPage: "airbnb",
+  Home.fetchAll()
+    .then(([registersHomeList]) => {
+      res.render("store/index", {
+        registeredHomes: registersHomeList,
+        pageTitle: "Airbnb",
+        currentPage: "airbnb",
+      });
+    })
+    .catch((err) => {
+      console.log("Error occure while getting data from database");
     });
-  }).catch(err=>{
-    console.log("Error occure while getting data from database")
-  });
 };
 
 exports.getHomeList = (req, res, next) => {
-  Home.fetchAll().then(([registersHomeList, fields]) => {
-    res.render("store/index", {
+  Home.fetchAll().then(([registersHomeList]) => {
+    res.render("store/home-list", {
       registeredHomes: registersHomeList,
-      pageTitle: "Airbnb",
-      currentPage: "airbnb",
+      pageTitle: "Home List",
+      currentPage: "home-List",
     });
   });
 };
 
 exports.getBooking = (req, res, next) => {
-  Home.fetchAll().then(([registersHomeList, fields]) => {
-    res.render("store/index", {
+  Home.fetchAll().then(([registersHomeList]) => {
+    res.render("store/bookings", {
       registeredHomes: registersHomeList,
-      pageTitle: "Airbnb",
-      currentPage: "airbnb",
+      pageTitle: "My Booking",
+      currentPage: "my-Booking",
     });
   });
 };
 
 exports.getHomeDetails = (req, res, next) => {
   const homeId = req?.params?.homeId;
-  Home.findById(homeId, (homeDetails) => {
-    if (Array.isArray(homeDetails) && homeDetails.length === 0) {
-      res.redirect("/store/home-list");
-    } else {
-      res.render("store/home-details", {
-        home: homeDetails[0],
-        pageTitle: "Home Details",
-        currentPage: "home-details",
-      });
-    }
-  });
+
+  Home.findById(homeId)
+    .then(([homes]) => {
+      if (Array.isArray(homes) && homes.length === 0) {
+        res.redirect("/store/home-list");
+      } else {
+        res.render("store/home-details", {
+          home: homes[0],
+          pageTitle: "Home Details",
+          currentPage: "home-details",
+        });
+      }
+    })
+    .then((err) => {
+      console.log("error occure while fetching data from database by id");
+    });
 };
 
 exports.saveToFavouritys = (req, res, next) => {
