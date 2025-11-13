@@ -32,4 +32,15 @@ module.exports = class Home {
     return db.execute("delete from home_details where id = ?", [homeId]);
 
   }
+  
+static updateHome(home) {
+  return db.execute(
+    `UPDATE home_details 
+     SET houseName = ?, housePrice = ?, location = ?, rating = ?, photoUrl = ?, description = ?
+     WHERE id = ?`,
+    [home.houseName, home.housePrice, home.location, home.rating, home.photoUrl, home.description, home.id]
+  );
+}
+
+
 };

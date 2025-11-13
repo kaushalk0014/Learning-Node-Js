@@ -77,7 +77,8 @@ exports.updateHome = (req, res, next) => {
     id
   );
   home.id = id;
-  home.save();
+
+  Home.updateHome(home);
   res.redirect("/host/home-list");
 };
 
